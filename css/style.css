@@ -57,3 +57,9 @@ hr {
 .image-margin {
 	padding-top: 10px;
 }
+
+#map {
+    display: block;
+    height: 500px;
+    margin: 0 5%;
+}
