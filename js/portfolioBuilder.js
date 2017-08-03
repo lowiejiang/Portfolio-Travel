@@ -1,4 +1,4 @@
-var locations = {
+var travels = {
 	"locations": [{
 		"imageUrl": "pictures/newzealand.jpg",
 		"imageAlt": "New Zealand Hobbiton",
@@ -70,30 +70,30 @@ var locations = {
 		"imageAlt": "Lesotho",
 		"name": "Lesotho",
 		"date": "October 2011"
-	},
+	}
 	],
 	"display": function () {
 		var item = 0;
-		for (i = 0; i < (locations.locations.length/3); i++) {
-			$("#location").append(HTMLrowStart);
+		for (i = 0; i < (travels.locations.length/3); i++) {
+			$("#location").append(HTMLrowStart(i));
 
 			for (count=0; count < 3; count++) {
-				$(".row").append(HTMLitemStart);
+				$(".location-row-" + i).append(HTMLitemStart);
 
-				var formattedImageUrl = HTMLimageUrl.replace("%data%", locations.locations[item].imageUrl);
-				var formattedImageAlt = HTMLimageAlt.replace("%data%", locations.locations[item].imageAlt);
+				var formattedImageUrl = HTMLimageUrl.replace("%data%", travels.locations[item].imageUrl);
+				var formattedImageAlt = HTMLimageAlt.replace("%data%", travels.locations[item].imageAlt);
 				var formattedImageStuff = formattedImageUrl + formattedImageAlt;
 				$(".col-md-4:last").append(formattedImageStuff);
 
-				var formattedLocationName = HTMLlocationName.replace("%data%", locations.locations[item].name);
+				var formattedLocationName = HTMLlocationName.replace("%data%", travels.locations[item].name);
 				$(".col-md-4:last").append(formattedLocationName);
 
-				var formattedDate = HTMLlocationDate.replace("%data%", locations.locations[item].date);
+				var formattedDate = HTMLlocationDate.replace("%data%", travels.locations[item].date);
 				$(".col-md-4:last").append(formattedDate);
 				item++;
-			};
-		};
+			}
+		}
 	}
 };
-
-locations.display();
+travels.display();
+$("#mapDiv").append(googleMap);
