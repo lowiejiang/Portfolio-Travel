@@ -1,5 +1,3 @@
-var test = '<p>look at me I work</p>';
-
 var HTMLrowStart = '<div class="row"></div>';
 
 var HTMLitemStart = '<div class="col-md-4"></div>';
