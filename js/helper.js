@@ -22,7 +22,6 @@ Start here! initializeMap() is called when page is loaded.
 */
 
 function initializeMap() {
-	console.log('initialize map called');
 
     var locations;
 
@@ -54,6 +53,7 @@ function initializeMap() {
         	var place = travels.locations[i].name;
         	placesVisited.push(place);
         };
+        console.log(placesVisited);
 
         return placesVisited;
     }
