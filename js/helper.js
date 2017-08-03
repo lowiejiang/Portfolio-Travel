@@ -53,7 +53,6 @@ function initializeMap() {
         	var place = travels.locations[i].name;
         	placesVisited.push(place);
         };
-        console.log(placesVisited);
 
         return placesVisited;
     }
