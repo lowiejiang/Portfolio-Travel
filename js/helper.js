@@ -28,19 +28,64 @@ function initMap() {
             var place = travels.locations[i].location;
             placesVisited.push(place);
         };
-
         return placesVisited;
     }
 
     var locations = locationFinder();
 
-    var markers = locations.map(function(location, i) {
-        return new google.maps.Marker({
-        position: location,
-        map: map
-        });
-    });
+    for (var i = 0; i < locations.length; ++i) {
+          var marker = new google.maps.Marker({
+            position: locations[i],
+            map: map
+          });
+          createInfoWindow(marker, imageArray()[i], nameArray()[i]);
+        }
+
 }
+
+function createInfoWindow(marker, imageLink, name) {
+  var content = '<div id="iw_container">' +
+      '<div class="iw_title">' + name + '</div>' +
+      '<div class="iw_content"><IMG BORDER="0px" ALIGN="Center" IMG HEIGHT="150px" SRC="' + imageLink + '"></div>' +
+   '</div>';
+  var infowindow = new google.maps.InfoWindow({
+    content: content
+  });
+
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.open(marker.get('map'), marker);
+  });
+}
+
+function imageArray() {
+
+        // initializes an empty array
+        var placesImages = [];
+        var length = travels.locations.length;
+
+        // iterates through locations and appends each location to
+        // the locations array. Note that forEach is used for array iteration
+        for (i = 0; i < length; i++) {
+            var image = travels.locations[i].imageUrl;
+            placesImages.push(image);
+        };
+        return placesImages;
+    }
+
+function nameArray() {
+
+        // initializes an empty array
+        var placesNames = [];
+        var length = travels.locations.length;
+
+        // iterates through locations and appends each location to
+        // the locations array. Note that forEach is used for array iteration
+        for (i = 0; i < length; i++) {
+            var name = travels.locations[i].name;
+            placesNames.push(name);
+        };
+        return placesNames;
+    }
 
 // Calls the initializeMap() function when the page loads
 window.addEventListener('load', initMap);

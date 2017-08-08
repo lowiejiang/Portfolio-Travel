@@ -33,6 +33,7 @@ body {
 
 .subtitle {
 	margin-top: 10px;
+	font-size: 25px;
 }
 
 hr {
@@ -59,7 +60,22 @@ hr {
 }
 
 #map {
-    display: block;
-    height: 550px;
-    width: 940px;
+    height: 500px;
+    overflow: hidden;
+    padding-bottom: 22.25%;
+    padding-top: 30px;
+    position: relative;
 }
+
+.gm-style-iw {
+   font-size: 25px !important;
+   font-family: 'Lato', sans-serif !important;
+   text-align: center !important;
+}
+
+#mapDiv {
+  position: relative;
+}
+
+
+
