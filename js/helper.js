@@ -34,12 +34,26 @@ function initMap() {
 
     var locations = locationFinder();
 
-    var markers = locations.map(function(location, i) {
-        return new google.maps.Marker({
-        position: location,
-        map: map
-        });
-    });
+    
+
+    for (var i = 0; i < locations.length; ++i) {
+          var marker = new google.maps.Marker({
+            position: locations[i],
+            map: map
+          });
+          attachImage(marker, secretMessage);
+        }
+}
+
+var secretMessage = "test";
+function attachImage(marker, secretMessage) {
+  var infowindow = new google.maps.InfoWindow({
+    content: secretMessage
+  });
+
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.open(marker.get('map'), marker);
+  });
 }
 
 // Calls the initializeMap() function when the page loads

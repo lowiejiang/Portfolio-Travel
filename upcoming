@@ -1,0 +1,21 @@
+************************************************
+**Highlight image shows when marker is clicked**
+************************************************
+*References*
+Code: https://developers.google.com/maps/documentation/javascript/examples/event-closure
+Using image in code: https://stackoverflow.com/questions/10161013/how-to-add-an-image-to-infowindow-of-marker-in-google-maps-v3
+
+*To-do's*
+-input code
+-remove pictures from bottom
+
+
+************************************************
+**Customize Map with colors*********************
+************************************************
+*References*
+https://developers.google.com/maps/documentation/javascript/examples/style-array
+https://stackoverflow.com/questions/7095574/google-maps-api-3-custom-marker-color-for-default-dot-marker
+
+*To-do's*
+-figure out color scheme
