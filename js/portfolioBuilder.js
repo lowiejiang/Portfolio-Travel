@@ -148,22 +148,27 @@ var travels = {
 	}
 	],
 	"display": function () {
+		var highlightsArray = [0,1,5]; //array for highlights, need 3
 		var item = 0;
-		for (i = 0; i < (travels.locations.length/3); i++) {
+		for (i = 0; i < (highlightsArray.length/3); i++) {
+			//add row
 			$("#location").append(HTMLrowStart(i));
 
+			//add 3 pics per row
 			for (count=0; count < 3; count++) {
+				var number = highlightsArray[item];
+				console.log (number);
 				$(".location-row-" + i).append(HTMLitemStart);
 
-				var formattedImageUrl = HTMLimageUrl.replace("%data%", travels.locations[item].imageUrl);
-				var formattedImageAlt = HTMLimageAlt.replace("%data%", travels.locations[item].imageAlt);
+				var formattedImageUrl = HTMLimageUrl.replace("%data%", travels.locations[number].imageUrl);
+				var formattedImageAlt = HTMLimageAlt.replace("%data%", travels.locations[number].imageAlt);
 				var formattedImageStuff = formattedImageUrl + formattedImageAlt;
 				$(".col-md-4:last").append(formattedImageStuff);
 
-				var formattedLocationName = HTMLlocationName.replace("%data%", travels.locations[item].name);
+				var formattedLocationName = HTMLlocationName.replace("%data%", travels.locations[number].name);
 				$(".col-md-4:last").append(formattedLocationName);
 
-				var formattedDate = HTMLlocationDate.replace("%data%", travels.locations[item].date);
+				var formattedDate = HTMLlocationDate.replace("%data%", travels.locations[number].date);
 				$(".col-md-4:last").append(formattedDate);
 				item++;
 			}
