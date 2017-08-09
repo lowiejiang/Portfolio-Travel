@@ -176,5 +176,5 @@ var travels = {
 	}
 };
 
-travels.display();
 $("#mapDiv").append(googleMap);
+travels.display();
