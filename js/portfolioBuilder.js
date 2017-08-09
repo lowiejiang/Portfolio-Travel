@@ -171,5 +171,5 @@ var travels = {
 	}
 };
 
-//travels.display(); //since I'm not doing this fuction right now
+travels.display();
 $("#mapDiv").append(googleMap);
