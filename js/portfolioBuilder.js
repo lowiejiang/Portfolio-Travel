@@ -148,7 +148,7 @@ var travels = {
 	}
 	],
 	"display": function () {
-		var highlightsArray = [0,1,5]; //array for highlights, need 3
+		var highlightsArray = [0,1,2,3,4,5]; //array for highlights, need 3
 		var item = 0;
 		for (i = 0; i < (highlightsArray.length/3); i++) {
 			//add row
